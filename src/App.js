@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import SwipeableTemporaryDrawer from './demo-drawer'
+import { makeStyles } from '@mui/styles'
+import Navbar from './component/Navbar'
+import Feed from './component/Feed'
+import { Grid } from '@mui/material'
+import Leftbar from './component/Leftbar'
+import Rightbar from './component/Rightbar'
+import Add from './component/Add'
+import AddTest from './component/AddTest'
+import TestFile from './component/TestFile'
+
+const useStyles = makeStyles((theme) => ({
+  right: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none !important',
+    },
+  },
+}))
 
 function App() {
+  const classes = useStyles()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TestFile/>
+      {/* <SwipeableTemporaryDrawer /> */}
+      {/* <Navbar />
+      <Grid container>
+        <Grid item sm={2} xs={2}>
+          <Leftbar />
+        </Grid>
+        <Grid item sm={7} xs={10}>
+          <Feed />
+        </Grid>
+        <Grid item sm={3} className={classes.right}>
+          <Rightbar />
+        </Grid>
+      </Grid>
+      <Add /> */}
+      {/* <AddTest /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
